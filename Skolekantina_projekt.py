@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 @app.route("/")
 def home():
     username = "gigachad"
-    return render_template("index.html", username=username)
+    return render_template("home.html", username=username)
 
 
 
