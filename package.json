@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "live-server --port=3000 --entry-file=src/scripts/index.html",
+    "dev": "live-server --port=8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/liena-grytsyna/Skolekantina/issues"
   },
-  "homepage": "https://github.com/liena-grytsyna/Skolekantina#readme"
+  "homepage": "https://github.com/liena-grytsyna/Skolekantina#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }
