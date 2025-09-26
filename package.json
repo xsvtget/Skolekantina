@@ -6,7 +6,9 @@
   "scripts": {
     "start": "live-server --port=3000 --entry-file=src/scripts/index.html",
     "dev": "live-server --port=8000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch src/styles/scss:src/styles/css",
+    "sass:build": "sass src/styles/scss/main.scss:src/styles/css/main.css --no-source-map --style=compressed"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
   "homepage": "https://github.com/liena-grytsyna/Skolekantina#readme",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "sass": "^1.93.2"
   }
 }
