@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.secret_key = "nbQ&UdC%TwrmU#Z9WG2n3nY2tc4@f$fUay@MDmy?qg??3v*tSHyfR4qjMMnM8aJD"
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "mariadb+mariadbconnector://Oleksandr:root@10.0.0.85:3308/Skolekantina"
+app.config["SQLALCHEMY_DATABASE_URI"] = "mariadb+mariadbconnector://Soup225:root@10.0.0.85:3308/Skolekantina"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
