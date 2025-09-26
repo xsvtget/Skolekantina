@@ -7,8 +7,8 @@
     "start": "live-server --port=3000 --entry-file=src/index.html",
     "dev": "live-server --port=8000",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:watch": "sass --watch src/styles/scss:src/styles/css",
-    "sass:build": "sass src/styles/scss/main.scss:src/styles/css/main.css --no-source-map --style=compressed"
+    "sass:watch": "sass --watch src/styles:dist/css",
+    "sass:build": "sass src/styles/main.scss:dist/css/main.css --no-source-map --style=compressed"
   },
   "repository": {
     "type": "git",

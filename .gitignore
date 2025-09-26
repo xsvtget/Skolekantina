@@ -16,5 +16,8 @@ __pycache__/
 # SASS
 .sass-cache/
 
+# Compiled CSS
+dist/
+
 # Project specific
-# Skolekantina_projekt.py
+Skolekantina_projekt.py
