@@ -8,11 +8,28 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mariadb+mariadbconnector://Oleksandr:ro
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
+class Meny_uke(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uke = db.Column(db.String(200))
+    mandag = db.Column(db.String(200))
+    tirsdag = db.Column(db.String(200))
+    onsdag = db.Column(db.String(200))
+    torsdag = db.Column(db.String(200))
+    fredag = db.Column(db.String(200))
 
 @app.route("/")
 def home():
     username = "gigachad"
     return render_template("martynas.html", username=username)
+
+
+@app.route("/vika_screen")
+def vika_screen():
+    return render_template("vika.html")
+
+@app.route("/liena")
+def liena():
+    return render_template("vika.html")
 
 
 
