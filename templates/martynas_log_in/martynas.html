@@ -78,14 +78,17 @@
 </head>
 <body>
     <h1> Login </h1>
-<form action="{{ url_for('home')}}" method="post">
+<form action="{{ url_for('home')}}" method="post" novalidate>
     <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
     <input type="password" class="passord" name="passord" placeholder="password" />
-    <button class="h2" type="button" onclick="login()">log in</button>
-    <button class="h3" type="button" onclick="window.location.href='/martynas_log_in/martynas_sign_in.html'">sign in</button>
+    <button class="h2" type="submit" onclick="login()">log in</button>
 </form>
-    
+    <button class="h3" type="button" onclick="signIn()">sign in</button>
     <script>
+        function signIn(){
+            window.location.href="{{ url_for('register_page') }}"
+        }
+
         function login(){
             const brukernavn = document.querySelector(".brukernavn").value;
             const passord = document.querySelector(".passord").value;
