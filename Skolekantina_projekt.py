@@ -32,7 +32,7 @@ class Meny_uke(db.Model):
 @app.route("/")
 def home():
     if "username" in session:
-        return redirect(url_for('liena'))
+        return redirect(url_for('home'))
     return render_template("/martynas_log_in/martynas.html")
 
 @app.route("/login", methods=['POST'])
@@ -43,7 +43,7 @@ def login():
     username = Users.query.filter_by(username=user).first()
     if username and username.check_password(password):
         session["username"] = user
-        return redirect(url_for("liena"))
+        return redirect(url_for("login"))
     else:
         return render_template("/martynas_log_in/martynas.html")
     

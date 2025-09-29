@@ -11,7 +11,8 @@
         <h1> Login </h1>
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
         <input type="password" class="passord" name="passord" placeholder="password" />
-        <button class="h2" type="submit" onclick="login()">log in</button>
+        <button class="h2" type="button" onclick="login()">log in</button>
+        <button class="sepassord" type="submit" onclick="sepassord()"> knap </button>
     </form>
     <button class="h3" type="button" onclick="signIn()">sign in</button>
     <script>
@@ -23,13 +24,7 @@
             const brukernavn = document.querySelector(".brukernavn").value;
             const passord = document.querySelector(".passord").value;
 
-            if (brukernavn === "martynas" && passord === "martynas123") {
-                window.location.href = "https://4.bp.blogspot.com/-0TrTyhEuOJ8/WIfyjvK_qiI/AAAAAAAAAOo/bOy3PRIscU49M6ZG7juyI09lolHi3Bq9wCLcB/s1600/yey.jpg";   ///mideltidig
-            } else {
-                alert("Feil brukernavn eller passord");
-            }
-
-
+            
         }
 
     </script>
