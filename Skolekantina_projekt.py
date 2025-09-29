@@ -17,7 +17,7 @@ class Meny_uke(db.Model):
     torsdag = db.Column(db.String(200))
     fredag = db.Column(db.String(200))
 
-@app.route("/")
+@app.route("/login", methods=["POST"])
 def home():
     username = "gigachad"
     return render_template("martynas.html", username=username)
@@ -25,11 +25,11 @@ def home():
 
 @app.route("/vika_screen")
 def vika_screen():
-    return render_template("vika.html")
+    return render_template("/vika_screen/index.html")
 
 @app.route("/liena")
 def liena():
-    return render_template("vika.html")
+    return render_template("liena.html")
 
 
 
