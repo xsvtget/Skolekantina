@@ -33,7 +33,7 @@ class Meny_uke(db.Model):
 def home():
     if "username" in session:
         return redirect(url_for('liena'))
-    return render_template("martynas.html")
+    return render_template("/martynas_log_in/martynas.html")
 
 @app.route("/login", methods=['POST'])
 def login():
@@ -45,17 +45,17 @@ def login():
         session["username"] = user
         return redirect(url_for("vika_screen"))
     else:
-        return render_template("martynas.html")
+        return render_template("/martynas_log_in/martynas.html")
     
     
     
-@app.route("/register.html", methods=["POST"])
+@app.route("/register", methods=["POST"])
 def register():
     user = request.form["username"]
     password = request.form["passord"]
     username = Users.query.filter_by(username=username).first()
     if username:
-        return render_template("register.html", error="This user already exist!")
+        return render_template("/martynas_log_in/martynas_sign_in.html", error="This user already exist!")
     else:
         new_user = Users(username=username)
         new_user.set_password(password)
@@ -64,7 +64,13 @@ def register():
         session["username"] = user
         return redirect(url_for("home"))
 
+@app.route("/registration")
+#register page route
+def register_page():
+    return render_template("/martynas_log_in/martynas_sign_in.html")
 
+    
+    
 @app.route("/vika_screen")
 def vika_screen():
     return render_template("/vika_screen/index.html")
