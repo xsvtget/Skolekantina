@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="/static/css/martynas.css">
 
-    <form>
+    <form id="form">
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
         <input type="password" class="passord" name="passord" placeholder="password" />
         <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
@@ -43,7 +43,13 @@
                 alert("Passordet må være minst 6 tegn langt");
                 return;
             }
-            window.location.href="{{ url_for('liena') }}"
+            else {
+                let form = document.getElementById("form")
+                form.setAttribute("action", "{{ url_for('register')}}")
+                form.setAttribute("method", "post")
+                form.submit()
+            }
+
         }
 
     </script>
