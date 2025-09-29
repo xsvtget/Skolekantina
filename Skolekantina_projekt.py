@@ -25,11 +25,11 @@ def home():
 
 @app.route("/vika_screen")
 def vika_screen():
-    return render_template("vika.html")
+    return render_template("/vika_screen/index.html")
 
 @app.route("/liena")
 def liena():
-    return render_template("vika.html")
+    return render_template("/liena-website/index.html")
 
 
 

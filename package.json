@@ -2,13 +2,15 @@
   "name": "skolekantina",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "templates/liena-website/index.html",
   "scripts": {
-    "start": "live-server --port=3000 --entry-file=src/index.html",
-    "dev": "live-server --port=8000",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:watch": "sass --watch src/styles:dist/css",
-    "sass:build": "sass src/styles/main.scss:dist/css/main.css --no-source-map --style=compressed"
+    "start": "parcel --port 3000 --open",
+    "dev": "parcel --port 8000 --open",
+    "build": "parcel build --dist-dir dist --public-url ./",
+    "lint": "eslint templates/liena-website/scripts/**/*.js",
+    "lint:fix": "eslint templates/liena-website/scripts/**/*.js --fix",
+    "clean": "rimraf dist .parcel-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,13 +19,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/liena-grytsyna/Skolekantina/issues"
   },
   "homepage": "https://github.com/liena-grytsyna/Skolekantina#readme",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "eslint": "^8.56.0",
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "parsel": "^0.3.0",
