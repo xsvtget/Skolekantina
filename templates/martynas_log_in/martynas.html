@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKOLE Kantina</title>
+    <title> log in</title>
     <link rel="stylesheet" href="/static/css/martynas.css">
 </head>
 <body>
@@ -21,10 +21,16 @@
         }
 
         function login(){
-            const brukernavn = document.querySelector(".brukernavn").value;
+            const brukernavn = document.querySelector(".brukernavn").value.trim();
             const passord = document.querySelector(".passord").value;
 
-            
+            const form = document.querySelector('form');
+            if (form) {
+                form.submit();
+            } else {
+
+                window.location.href = "{{ url_for('login') }}";
+            }
         }
 
     </script>

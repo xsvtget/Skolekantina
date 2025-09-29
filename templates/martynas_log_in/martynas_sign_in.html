@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> sign up</title>
 </head>
 <body>
 
@@ -15,12 +15,13 @@
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
         <input type="password" class="passord" name="passord" placeholder="password" />
         <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
-        <button class="h2" type="button" onclick="register()">Register og log in</button>
+        <button class="h2" type="button" onclick="register()">sign up</button>
+        <button class="h2" type="button" onclick="login()">log in</button>
 
     </form>
     <script>
-        function logIn(){
-            window.location.href="{{ url_for('home') }}"
+        function login(){
+            window.location.href = "{{ url_for('home') }}";
         }
 
 
