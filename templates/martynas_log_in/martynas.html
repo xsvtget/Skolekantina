@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/static/css/martynas.css">
 </head>
 <body>
-    <h1> Login </h1>
-    <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
-    <input type="password" class="passord" name="passord" placeholder="password" />
-    <button class="h2" type="submit" onclick="login()">log in</button>
-</form>
+    <form action="{{ url_for('login') }}" method="POST">
+        <h1> Login </h1>
+        <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
+        <input type="password" class="passord" name="passord" placeholder="password" />
+        <button class="h2" type="submit" onclick="login()">log in</button>
+    </form>
     <button class="h3" type="button" onclick="signIn()">sign in</button>
     <script>
         function signIn(){

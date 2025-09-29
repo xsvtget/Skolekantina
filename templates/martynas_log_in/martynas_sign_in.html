@@ -11,11 +11,11 @@
 
     <link rel="stylesheet" href="/static/css/martynas.css">
 
-    <form id="loginForm" method="POST" action="{{ url_for('home') }}">
+    <form id="loginForm" method="POST" action="{{ url_for('register') }}">
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
         <input type="password" class="passord" name="passord" placeholder="password" />
-        <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
-        <button class="h2" type="button" onclick="register()">Register</button>
+        <input type="password" class="passord2" placeholder="gjenta password" />
+        <button class="h2" type="submit" onclick="register()">Register</button>
 
     </form>
         <button class="h3" type="button" onclick="logIn()">Log in</button>
@@ -46,7 +46,6 @@
             }
 
             alert("NICE");
-            window.location.href="{{ url_for('home') }}"
         }
 
     </script>

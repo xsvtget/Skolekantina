@@ -40,10 +40,10 @@ def login():
     user = request.form["brukernavn"]
     password = request.form["passord"]
     
-    username = Users.query.filter_by(username=username).first()
+    username = Users.query.filter_by(username=user).first()
     if username and username.check_password(password):
         session["username"] = user
-        return redirect(url_for("vika_screen"))
+        return redirect(url_for("liena"))
     else:
         return render_template("/martynas_log_in/martynas.html")
     
@@ -51,13 +51,13 @@ def login():
     
 @app.route("/register", methods=["POST"])
 def register():
-    user = request.form["username"]
+    user = request.form["brukernavn"]
     password = request.form["passord"]
-    username = Users.query.filter_by(username=username).first()
+    username = Users.query.filter_by(username=user).first()
     if username:
         return render_template("/martynas_log_in/martynas_sign_in.html", error="This user already exist!")
     else:
-        new_user = Users(username=username)
+        new_user = Users(username=user)
         new_user.set_password(password)
         db.session.add(new_user)
         db.session.commit()
@@ -79,7 +79,10 @@ def vika_screen():
 def liena():
     return render_template("/liena-website/index.html")
 
-
+@app.route("/logout")
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     with app.app_context():
