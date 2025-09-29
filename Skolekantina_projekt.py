@@ -65,7 +65,6 @@ def register():
         return redirect(url_for("home"))
 
 
-
 @app.route("/vika_screen")
 def vika_screen():
     return render_template("/vika_screen/index.html")
