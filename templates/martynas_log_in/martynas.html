@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKOLE Kantina</title>
     <style> 
+        body {
+            background-color: #f0f0f0;
+        }
         .brukernavn {
             display: block;
             margin: 30px auto;
@@ -14,6 +17,7 @@
             text-align: center;
             border: 2px solid #858585ff;
             font-family: Arial, sans-serif;
+            transition: border 0.4s;
         }
         .brukernavn:hover {
             border: 2px solid #000;
@@ -27,6 +31,7 @@
             text-align: center;
             border: 2px solid #858585ff;
             font-family: Arial, sans-serif;
+            transition: border 0.4s;
         }
         .passord:hover {
             border: 2px solid #000;
@@ -48,10 +53,26 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: background 0.4s;
         }
         .h2:hover {
-            background-color: #005fa3;
+            background-color: #000000ff;
+        }
+        .h3 {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: 45px;
+            font-size: 20px;
+            background-color: #008cff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.4s;
+        }
+        .h3:hover {
+            background-color: #000000ff;
         }
     </style>
 </head>
@@ -60,7 +81,8 @@
 <form action="{{ url_for('home')}}" method="post">
     <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
     <input type="password" class="passord" name="passord" placeholder="password" />
-    <button class="h2" type="submit"> login</button>
+    <button class="h2" type="button" onclick="login()">log in</button>
+    <button class="h3" type="button" onclick="window.location.href='/martynas_log_in/martynas_sign_in.html'">sign in</button>
 </form>
     
     <script>
@@ -68,7 +90,11 @@
             const brukernavn = document.querySelector(".brukernavn").value;
             const passord = document.querySelector(".passord").value;
 
-            /// if 
+            if (brukernavn === "martynas" && passord === "martynas123") {
+                window.location.href = "https://4.bp.blogspot.com/-0TrTyhEuOJ8/WIfyjvK_qiI/AAAAAAAAAOo/bOy3PRIscU49M6ZG7juyI09lolHi3Bq9wCLcB/s1600/yey.jpg";   ///mideltidig
+            } else {
+                alert("Feil brukernavn eller passord");
+            }
 
 
         }

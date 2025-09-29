@@ -20,7 +20,7 @@ class Meny_uke(db.Model):
 @app.route("/")
 def home():
     username = "gigachad"
-    return render_template("martynas.html", username=username)
+    return render_template("martynas_log_in/martynas.html", username=username)
 
 
 @app.route("/vika_screen")
