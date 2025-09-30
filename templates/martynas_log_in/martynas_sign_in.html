@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> sign up</title>
+</head>
+<body>
+
+    <h1> sign in </h1>
+
+    <link rel="stylesheet" href="/static/css/martynas.css">
+
+    <form id="form">
+        <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
+        <input type="password" class="passord" name="passord" placeholder="password" />
+        <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
+        <button class="h2" type="button" onclick="register()">sign up</button>
+        <button class="h2" type="button" onclick="login()">log in</button>
+
+    </form>
+    <script>
+        function login(){
+            window.location.href = "{{ url_for('home') }}";
+        }
+
+
+        function register(){
+            const brukernavn = document.querySelector(".brukernavn").value;
+            const passord = document.querySelector(".passord").value;
+            const passord2 = document.querySelector(".passord2").value;
+
+            if (passord !== passord2) {
+                alert("Passordene er ikke like");
+                return;
+            }
+
+            if (brukernavn.length < 2) {
+                alert("Brukernavnet må være minst 4 tegn langt");
+                return;
+            }
+
+            if (passord.length < 6) {
+                alert("Passordet må være minst 6 tegn langt");
+                return;
+            }
+            else {
+                let form = document.getElementById("form")
+                form.setAttribute("action", "{{ url_for('register')}}")
+                form.setAttribute("method", "post")
+                form.submit()
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
