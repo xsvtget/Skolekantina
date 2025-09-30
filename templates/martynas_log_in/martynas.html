@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> log in</title>
+    <link rel="stylesheet" href="/static/css/martynas.css">
+</head>
+<body>
+    <form action="{{ url_for('login') }}" method="POST">
+        <h1> Login </h1>
+        <button class="sepassord" type="button" onclick="sepassord()"></button>
+        <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
+        <input type="password" class="passord" name="passord" placeholder="password" />
+        <button class="h2" type="button" onclick="login()">log in</button>
+    </form>
+    <button class="h3" type="button" onclick="signIn()">sign in</button>
+    <script>
+        function signIn(){
+            window.location.href="{{ url_for('register_page') }}"
+        }
+
+        function sepassord(){
+            const passordInput = document.querySelector('.passord');
+            if (passordInput.type === 'password') {
+                passordInput.type = 'text';
+            } else {
+                passordInput.type = 'password';
+            }
+        }
+
+        function login(){
+            const brukernavn = document.querySelector(".brukernavn").value.trim();
+            const passord = document.querySelector(".passord").value;
+
+            const form = document.querySelector('form');
+            if (form) {
+                form.submit();
+            } else {
+
+                window.location.href = "{{ url_for('login') }}";
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
