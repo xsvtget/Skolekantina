@@ -1,0 +1,236 @@
+:root {
+    --sky1: #9bbae7;
+    --sky2: #396bd6;
+    --text: #ffffff;
+    --soft: rgba(255, 255, 255, .22);
+    --hot: #ffd166;
+    --cold: #10335e;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    background: radial-gradient(1000px 900px at 30% 0%, var(--sky1), var(--sky2));
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    overflow: hidden;
+    /* TV: без скрола */
+}
+
+.stage {
+    width: 1920px;
+    height: 1080px;
+    transform-origin: top left;
+    position: relative;
+    padding: 48px;
+}
+
+@media (max-width:1920px),
+(max-height:1080px) {
+    body {
+        display: flex
+    }
+
+    /* центруємо сцену при масштабі */
+}
+
+/* ===== Header ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.brand {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end
+}
+
+.city {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: .5px
+}
+
+.time {
+    font-size: 28px;
+    opacity: .95
+}
+
+.summary {
+    font-size: 28px;
+    opacity: .95
+}
+
+/* ===== Layout ===== */
+.main {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 28px;
+}
+
+.panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .04));
+    border: 1px solid var(--soft);
+    border-radius: 24px;
+    padding: 28px;
+    backdrop-filter: blur(6px);
+}
+
+.panel-title {
+    font-size: 28px;
+    opacity: .95;
+    margin-bottom: 8px;
+}
+
+/* ===== Current ===== */
+.current {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center
+}
+
+.temp {
+    font-size: 200px;
+    line-height: .85;
+    font-weight: 300
+}
+
+.feels {
+    font-size: 36px;
+    opacity: .95
+}
+
+.hi-lo {
+    font-size: 28px;
+    opacity: .95
+}
+
+.wdesc {
+    font-size: 40px;
+    margin-top: 8px
+}
+
+.kpis {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+.chip {
+    background: rgba(0, 0, 0, .28);
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-size: 26px;
+    text-align: center
+}
+
+/* ===== Hourly ===== */
+.hourly {
+    margin-top: 22px
+}
+
+.row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 16px;
+    overflow: hidden
+}
+
+.hour {
+    min-width: 140px;
+    text-align: center;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid var(--soft);
+    border-radius: 16px;
+    padding: 14px;
+}
+
+.hour .t {
+    font-size: 42px;
+    font-weight: 600
+}
+
+.hour .h {
+    font-size: 22px;
+    opacity: .95
+}
+
+.bar {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .25);
+    margin-top: 8px;
+    overflow: hidden
+}
+
+.bar>i {
+    display: block;
+    height: 100%;
+    width: 0%
+}
+
+/* ===== Daily ===== */
+.daily {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 16px
+}
+
+.day {
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid var(--soft);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center
+}
+
+.day .name {
+    font-size: 24px;
+    opacity: .95
+}
+
+.day .ico {
+    font-size: 46px;
+    margin: 6px 0
+}
+
+.day .range {
+    font-size: 28px
+}
+
+.day .range b {
+    color: var(--hot)
+}
+
+.day .range i {
+    color: var(--cold);
+    font-style: normal
+}
+
+/* ===== Footer ===== */
+footer {
+    position: absolute;
+    left: 48px;
+    right: 48px;
+    bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    opacity: .95
+}
+
+.source {
+    font-size: 22px
+}
