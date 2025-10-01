@@ -73,7 +73,7 @@ def register_page():
     
 @app.route("/vika_screen")
 def vika_screen():
-    return render_template("/vika_screen/index.html")
+    return render_template("/vika-screen/index.html")
 
 @app.route("/liena")
 def liena():
