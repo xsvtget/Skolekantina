@@ -11,27 +11,35 @@
     <div>
         <h1>UKENS MENU</h1>
     </div>
+
+    
+    
     <div class="content">
-        <div class="dagens-menu">
-            <img src="/static/img/{29A92B8D-AEF0-499E-A228-F5BA69DD2E7B}.png" alt="">
-            <p>Mandag - Suppe: Pasta med Ost</p>
-        </div>
-        <div class="dagens-menu">
-            <img src="/static/img/{E58965D4-9A65-4290-8A55-EE19329EB30E}.png" alt="">
-            <p>Tirsdag - Spagetti</p>
-        </div>
-        <div class="dagens-menu">
-            <img src="/static/img/{4E26FAB4-8A75-4CCA-B586-3EBDF3433E6C}.png" alt="">
-            <p>Onsdag - Kylling curry wok</p>
-        </div>
-        <div class="dagens-menu">
-            <img src="/static/img/{4D2970B5-75C3-4C2E-B2B2-651A4BF7F24E}.png" alt="">
-            <p>Torsdag - Pizza</p>
-        </div>
-        <div class="dagens-menu">
-            <img src="/static/img/{8079D8B1-D6BC-45D0-97CD-4DEBA8229369}.png" alt="">
-            <p>Fredag - Fiskesuppe</p>
-        </div>
+        {% for uken in ukens %}
+            <div class="dagens-menu">
+                <img src="/static/img/{29A92B8D-AEF0-499E-A228-F5BA69DD2E7B}.png" alt="">
+                <p>Mandag - {{ uken.mandag }}</p>
+            </div>
+            <div class="dagens-menu">
+                <img src="/static/img/{E58965D4-9A65-4290-8A55-EE19329EB30E}.png" alt="">
+                <p>Tirsdag - {{ uken.tirsdag }}</p>
+            </div>
+            <div class="dagens-menu">
+                <img src="/static/img/{4E26FAB4-8A75-4CCA-B586-3EBDF3433E6C}.png" alt="">
+                <p>Onsdag - {{ uken.onsdag }}</p>
+            </div>
+            <div class="dagens-menu">
+                <img src="/static/img/{4D2970B5-75C3-4C2E-B2B2-651A4BF7F24E}.png" alt="">
+                <p>Torsdag - {{ uken.torsdag }}</p>
+            </div>
+            <div class="dagens-menu">
+                <img src="/static/img/{8079D8B1-D6BC-45D0-97CD-4DEBA8229369}.png" alt="">
+                <p>Fredag - {{ uken.fredag }}</p>
+            </div>
+        {% endfor %}
     </div>
 </body>
+<script>
+
+</script>
 </html>

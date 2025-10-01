@@ -22,12 +22,24 @@ class Users(db.Model):
 
 class Meny_uke(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    uke = db.Column(db.String(200))
+    uke = db.Column(db.String(25), unique=True, nullable=False)
     mandag = db.Column(db.String(200))
     tirsdag = db.Column(db.String(200))
     onsdag = db.Column(db.String(200))
     torsdag = db.Column(db.String(200))
     fredag = db.Column(db.String(200))
+    Uke_pris = db.relationship('uke_pris', backref='meny_uke', lazy=True)
+    
+class uke_pris(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uke_n = db.Column(db.String(25), db.ForeignKey('meny_uke.uke'), nullable=False)
+    mandag_pris = db.Column(db.Integer)
+    tirsdag_pris = db.Column(db.Integer)
+    onsdag_pris = db.Column(db.Integer)
+    torsdag_pris = db.Column(db.Integer)
+    fredag_pris = db.Column(db.Integer)
+
+
 
 @app.route("/")
 def home():
@@ -73,7 +85,18 @@ def register_page():
     
 @app.route("/vika_screen")
 def vika_screen():
-    return render_template("/vika-screen/index.html")
+    ukens = db.session.query(Meny_uke).all()
+    return render_template("/vika-screen/index.html", ukens=ukens)
+
+@app.route("/vika_screen2")
+def vika_screen2():
+    ukens = db.session.query(Meny_uke).all()
+    return render_template("/vika-screen/screen2.html", ukens=ukens)
+
+@app.route("/vika_screen_W")
+def vika_screen_W():
+    return render_template("/vika-screen/weather.html")
+
 
 @app.route("/liena")
 def liena():
