@@ -10,17 +10,43 @@
 </head>
 
 <body>
+    {% for uken in ukens %}
+            <span id="Mandag" style="display: none;">{{ uken.mandag }}</span>
+            <span id="Tirsdag" style="display: none;">{{ uken.tirsdag }}</span>
+            <span id="Onsdag" style="display: none;">{{ uken.onsdag }}</span>
+            <span id="Torsdag" style="display: none;">{{ uken.torsdag }}</span>
+            <span id="Fredag" style="display: none;">{{ uken.fredag }}</span>
+            {% for Uke_pri in uken.Uke_pris %}
+                <span id="MandagP" style="display: none;">{{ Uke_pri.mandag_pris }}</span>
+                <span id="TirsdagP" style="display: none;">{{ Uke_pri.tirsdag_pris }}</span>
+                <span id="OnsdagP" style="display: none;">{{ Uke_pri.onsdag_pris }}</span>
+                <span id="TorsdagP" style="display: none;">{{ Uke_pri.torsdag_pris }}</span>
+                <span id="FredagP" style="display: none;">{{ Uke_pri.fredag_pris }}</span>
+            {% endfor %}
+    {% endfor %}
     <h1 style="margin-top: 220px; margin-bottom: 0;">Dagens Menu</h1>
 
     <div class="icon-sep">
         <img src="/static/img/ChatGPT Image 30. sep. 2025, 09_58_29.png" alt="Spaghetti">
     </div>
     <div class="tekst-pris">
-        <p style="font-size: 40px; margin-top: 0px;">Tirsdag -</p>
-        <p style="font-size: 32px;">Spaghetti med saus</p>
-        <p style="font-size: 28px;">Pris: 45 kr</p>
+        <p style="font-size: 40px; margin-top: 0px;" id="dag"></p>
+        <p style="font-size: 32px;" id="dag_meny"></p>
+        <p style="font-size: 28px;" id="meny_pris"></p>
     </div>
     <p class="tekst-bottom">Velkomen til Vågen VGS kantina</p>
 </body>
+<script>
 
+    const nyDag = new Date();
+    const dagNavn = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
+    let dag = dagNavn[nyDag.getDay()];
+
+
+    let dag_meny = document.getElementById(dag).innerHTML
+    let dag_pris = document.getElementById(dag+"P").innerHTML
+    document.getElementById("dag").innerHTML = `${dag} -`
+    document.getElementById("dag_meny").innerHTML = `${dag_meny}`
+    document.getElementById("meny_pris").innerHTML = `Pris: ${dag_pris} kr`
+</script>
 </html>
