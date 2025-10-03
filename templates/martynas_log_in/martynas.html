@@ -9,9 +9,11 @@
 <body>
     <form action="{{ url_for('login') }}" method="POST">
         <h1> Login </h1>
-        <button class="sepassord" type="button" onclick="sepassord()"></button>
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
-        <input type="password" class="passord" name="passord" placeholder="password" />
+        <div class="password-wrapper">
+            <input type="password" class="passord" name="passord" placeholder="password" />
+            <button class="sepassord" type="button" onclick="sepassord()"></button>
+        </div>
         <button class="h2" type="button" onclick="login()">log in</button>
     </form>
     <button class="h3" type="button" onclick="signIn()">sign in</button>

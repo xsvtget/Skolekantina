@@ -1,11 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-<body>
-    <h1>Hello World</h1>
-</body>
+  <title>Title</title>
+    <link
+      rel="stylesheet"
+      href="./css/index.css"
+    />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <body>
+    <header
+      class="header"
+      id="header"
+    >
+      <div
+        class="navigation"
+        id="navigation"
+      >
+      <div class="navigation-logo">
+          <span>K</span>
+          <span>A</span>
+          <span>N</span>
+          <span>T</span>
+          <span>I</span>
+          <span>N</span>
+          <span>A</span>
+      </div>
+
+        <nav class="navigation-menu">
+          <a
+            href="#products"
+            class="navigation-menu__link"
+          >
+          UKENS MENU
+          </a>
+          <a
+            href="#about-us"
+            class="navigation-menu__link"
+          >
+            FORTUNE COOKIE
+          </a>
+          <a
+            href="#contact-us"
+            class="navigation-menu__link navigation-menu__contact"
+          >
+            <img
+              src="./assets/images/logos/Icon-phone.svg"
+              alt="#"
+              class="navigation-menu__contact--image"
+            />
+            <span>WORKING HOURS</span>
+          </a>
+        </nav>
+
+        <a
+          class="navigation-burger"
+          href="#menu"
+        >
+          <div class="navigation-burger__icon"></div>
+        </a>
+      </div>
+      <p class="header__text text text__header">
+        Skolekantinen tilbyr enkel og sunn mat til elevene.
+      </p>
+      <h1 class="title header__title title__header">Skole
+        kantina</h1>
+
+      <img
+        src="./assets/images/Cookie.png"
+        class="header__image image image__header"
+        alt="#"
+      />
+
+      <a
+        href="#"
+        class="header__button button button__header"
+      >
+        <img
+          src="./assets/images/logos/cookie-icon.svg"
+          alt="#"
+          class="button__header--icon"
+        />
+        <span class="button__header--text">Learn more</span>
+      </a>
+    </header>
+    <div
+      class="menu"
+      id="menu"
+    >
+      <div class="navigation menu__navigation">
+
+        <a
+          class="navigation-close"
+          href="#"
+        >
+          <div class="navigation-close">
+            <img
+              src="./assets/images/logos/close.svg"
+              alt="#"
+              class="navigation-close__icon"
+            />
+          </div>
+        </a>
+      </div>
+
+      <nav class="links menu__links links__menu">
+        <ul class="links__menu--ul">
+          <li class="links__menu--li">
+            <a
+              href="#products"
+              class="links__menu--link"
+            >
+              Menu
+            </a>
+          </li>
+          <li class="links__menu--li">
+            <a
+              href="#about-us"
+              class="links__menu--link"
+            >
+              Fortune Cookie
+            </a>
+          </li>
+          <li class="links__menu--li">
+            <a
+              href="#blog"
+              class="links__menu--link"
+            >
+              Working hours
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="main">
+      <h2
+        class="title main__title title__main"
+        id="products"
+      >
+        Ukens menu
+      </h2>
+      <p class="text main__text text__main">
+        bla bla bla
+      </p>
+      <!-- Контейнер для API-меню, будет невидимым -->
+      <div id="weekly-menu" style="display:none;"></div>
+      <div class="main__product product main__product--1">
+        <img
+          src="./assets/images/Products1.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Cakes</h3>
+        <p class="product__text text text__product">
+          Oatmeal cakes with golden raisins, orange zest and chocolate chips
+        </p>
+
+      </div>
+      <div class="main__product product main__product--2">
+        <img
+          src="./assets/images/Products2.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Cakes</h3>
+        <p class="product__text text text__product">
+          Chocolate biscuit coffee cake topped with a buttercream and powder
+        </p>
+      </div>
+      <div class="main__product product main__product--3">
+        <img
+          src="./assets/images/Products3.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Donuts</h3>
+        <p class="product__text text text__product">
+          Light multi-layered croissant strewn with cinammon and almond “petals”
+        </p>
+      </div>
+      <div class="main__product product main__product--4">
+        <img
+          src="./assets/images/Products4.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Donuts</h3>
+        <p class="product__text text text__product">
+          Light multi-layered croissant strewn with coconut and nuts
+        </p>
+      </div>
+      <div class="main__product product main__product--5">
+        <img
+          src="./assets/images/Products5.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Cakes</h3>
+        <p class="product__text text text__product">
+          Chocolate salted caramel, Vanilla frutti
+          pebbles
+        </p>
+      </div>
+      <div class="main__product product main__product--6">
+        <img
+          src="./assets/images/Products6.jpg"
+          class="main__image image image__main"
+          alt="#"
+        />
+
+        <h3 class="product__title title title__product">Cookies</h3>
+        <p class="product__text text text__product">
+          Oatmeal cookies with golden raisins, orange zest and chocolate chips
+        </p>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+          <div class="footer--logo">
+          <span>K</span>
+          <span>A</span>
+          <span>N</span>
+          <span>T</span>
+          <span>I</span>
+          <span>N</span>
+          <span>A</span>
+      </div>
+        <nav
+          class="links footer__container--links footer__container--links1 links__footer footer__container--element"
+        >
+          <p class="links__footer--title">Menu</p>
+          <ul class="links__footer--ul">
+            <li class="links__footer--li">
+              <a
+                href="#products"
+                class="links__footer--link"
+              >
+                Ukens menu
+              </a>
+            </li>
+            <li class="links__footer--li">
+              <a
+                href="#about-us"
+                class="links__footer--link"
+              >
+                Fortune Cookie
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <p
+          class="footer__container--title title title__contact-us footer__container--element"
+          id="contact-us"
+        >
+          Vågen VGS
+        </p>
+
+        <nav
+          class="links footer__container--links footer__container--links2 links__footer footer__container--element"
+        >
+          <p class="links__footer--title">Åpningstider:</p>
+<span class="footer--working-hours">
+  <span class="day">Mandag – Torsdag:</span><br>
+  <span class="time">07:30 – 14:30</span>
+</span>
+
+<span class="footer--working-hours">
+  <span class="day">Fredag:</span><br>
+  <span class="time">07:30 – 14:00</span>
+</span>
+
+<span class="footer--working-hours">
+  <span class="day">Varmlunsj:</span><br>
+  <span class="time">fra 10:30 til 14:00 hver dag</span>
+</span>
+
+        </nav>
+
+        <nav
+          class="links footer__container--links footer__container--links3 links__footer footer__container--element"
+        >
+          <p class="links__footer--title">Email us</p>
+          <ul class="links__footer--ul">
+            <li class="links__footer--li">
+              <a
+                href="mailto:example@example.com"
+                class="links__footer--link"
+              >
+                example@example.com
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <p
+          class="links__footer--title footer__container--signature footer__container--element"
+        >
+          © Glycinel 2022
+        </p>
+      </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+  </body>
 </html>
+

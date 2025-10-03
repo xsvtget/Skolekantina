@@ -1,0 +1,43 @@
+@use '../utils/_mixins' as *;
+@use '../utils/_vars' as *;
+
+$letters: 7;         // кол-во букв
+$delay-step: 0.15s;  // шаг задержки для волны
+$jump-time: 1s;      // время самого прыжка
+$rest-time: 1s;      // пауза после прыжка
+
+.footer--logo {
+  margin-left: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+
+  display: flex;
+  gap: 2px;
+
+  span {
+    display: inline-block;
+    // общее время = прыжок + пауза
+    animation: jump $jump-time + $rest-time ease-in-out infinite;
+  }
+
+  // волна
+  @for $i from 1 through $letters {
+    span:nth-child(#{$i}) {
+      animation-delay: $i * $delay-step;
+    }
+  }
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0); // стоит
+  }
+  20% {
+    transform: translateY(-5px); // вверх
+  }
+  30% {
+    transform: translateY(0); // вернулась
+  }
+  // с 40% до 100% — отдых
+}

@@ -10,11 +10,19 @@
     <h1> sign in </h1>
 
     <link rel="stylesheet" href="/static/css/martynas.css">
+    <href="templates/martynas_log_in/martynas.html">
 
     <form id="form">
         <input type="text" class="brukernavn"  name="brukernavn" placeholder="username" />
-        <input type="password" class="passord" name="passord" placeholder="password" />
-        <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
+        <div class="password-wrapper">
+            <input type="password" class="passord" name="passord" placeholder="password" />
+            <button class="sepassord" type="button" onclick="sepassord()"></button>
+        </div>
++
+        <div class="password-wrapper">
+            <input type="password" class="passord2" name="passord2" placeholder="gjenta password" />
+            <button class="sepassord" type="button" onclick="sepassord2()"></button>
+        </div>
         <button class="h2" type="button" onclick="register()">sign up</button>
         <button class="h2" type="button" onclick="login()">log in</button>
 
@@ -22,6 +30,22 @@
     <script>
         function login(){
             window.location.href = "{{ url_for('home') }}";
+        }
+        function sepassord(){
+            const passordInput = document.querySelector(".passord");
+            if (passordInput.type === "password") {
+                passordInput.type = "text";
+            } else {
+                passordInput.type = "password";
+            }
+        }
+        function sepassord2(){
+            const passordInput = document.querySelector(".passord2");
+            if (passordInput.type === "password") {
+                passordInput.type = "text";
+            } else {
+                passordInput.type = "password";
+            }
         }
 
 
@@ -54,6 +78,7 @@
         }
 
     </script>
+
 
 </body>
 

@@ -1,0 +1,309 @@
+// Переменные
+$primary-color: #ff6b6b;
+$secondary-color: #2196f3;
+$success-color: #4caf50;
+$danger-color: #f44336;
+$border-color: #e0e0e0;
+$background-color: #f0f0f0;
+$text-color: #333;
+$text-secondary: #666;
+
+// Миксины
+@mixin flex($justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap > 0 {
+    gap: $gap;
+  }
+}
+
+@mixin button($bg-color, $text-color: white) {
+  padding: 8px 15px;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// Стили админ-контейнера
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+// Стили для хедера
+.admin-header {
+  @include flex(space-between, center);
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $border-color;
+}
+
+.admin-nav-link {
+  padding: 8px 16px;
+  background-color: $background-color;
+  border-radius: 4px;
+  text-decoration: none;
+  color: $text-color;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: darken($background-color, 5%);
+  }
+}
+
+// Вкладки дней недели
+.day-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid $border-color;
+}
+
+.day-tab {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+  
+  &.active {
+    border-bottom: 3px solid $primary-color;
+    color: $primary-color;
+  }
+  
+  &:hover:not(.active) {
+    color: lighten($primary-color, 10%);
+  }
+}
+
+.day-content {
+  margin-bottom: 30px;
+  
+  &.hidden {
+    display: none;
+  }
+}
+
+// Пункты меню
+.menu-items-container {
+  margin-bottom: 15px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  
+  &-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 4px;
+  }
+  
+  &-details {
+    flex-grow: 1;
+  }
+  
+  &-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  &-description {
+    color: $text-secondary;
+    margin-bottom: 5px;
+  }
+  
+  &-price {
+    font-weight: 600;
+    color: $primary-color;
+  }
+  
+  &-actions {
+    @include flex(flex-end, center, 10px);
+  }
+}
+
+// Кнопки
+.edit-btn {
+  @include button($success-color);
+}
+
+.delete-btn {
+  @include button($danger-color);
+}
+
+.add-item-btn {
+  @include button($secondary-color);
+}
+
+// Формы
+.menu-item-form {
+  padding: 20px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+    &:focus {
+      outline: none;
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.form-actions {
+  @include flex(flex-start, center, 10px);
+}
+
+.save-btn {
+  @include button($success-color);
+}
+
+.cancel-btn {
+  @include button($danger-color);
+}
+
+// Действия администратора
+.admin-actions {
+  @include flex(flex-start, center, 15px);
+  margin-top: 30px;
+}
+
+.primary-btn {
+  @include button($primary-color);
+}
+
+.secondary-btn {
+  @include button($secondary-color);
+}
+
+// Загрузка изображений
+.image-input-container {
+  margin-bottom: 10px;
+}
+
+.image-upload-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input-label {
+  @include button($secondary-color);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.selected-file-name {
+  color: $text-secondary;
+  font-size: 0.9em;
+}
+
+.image-separator {
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  color: $text-secondary;
+}
+
+.image-url-option {
+  width: 100%;
+}
+
+.image-preview {
+  margin-top: 10px;
+  max-width: 300px;
+  border: 1px solid $border-color;
+  padding: 5px;
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  &.hidden {
+    display: none;
+  }
+}
+
+// Общие классы утилиты
+.hidden {
+  display: none;
+}
+
+// Индикатор загрузки
+body.loading {
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+  }
+
+  &::before {
+    content: "Loading...";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary-color;
+    z-index: 1001;
+  }
+}
+
+// Сообщение об ошибке
+.error-message {
+  padding: 15px;
+  background-color: lighten($danger-color, 30%);
+  color: darken($danger-color, 20%);
+  border: 1px solid lighten($danger-color, 20%);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
