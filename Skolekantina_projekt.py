@@ -1,13 +1,19 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 app = Flask(__name__)
 app.secret_key = "nbQ&UdC%TwrmU#Z9WG2n3nY2tc4@f$fUay@MDmy?qg??3v*tSHyfR4qjMMnM8aJD"
 
+
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "mariadb+mariadbconnector://Oleksandr:root@10.0.0.85:3308/Skolekantina"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
+
+
+
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -30,6 +36,7 @@ class Meny_uke(db.Model):
     fredag = db.Column(db.String(200))
     Uke_pris = db.relationship('uke_pris', backref='meny_uke', lazy=True)
     
+    
 class uke_pris(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     uke_n = db.Column(db.String(25), db.ForeignKey('meny_uke.uke'), nullable=False)
@@ -38,6 +45,16 @@ class uke_pris(db.Model):
     onsdag_pris = db.Column(db.Integer)
     torsdag_pris = db.Column(db.Integer)
     fredag_pris = db.Column(db.Integer)
+    
+    
+class Uke_img(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uke = db.Column(db.String(25))
+    mandag_img = db.Column(db.String(500))
+    tirsdag_img = db.Column(db.String(500))
+    onsdag_img = db.Column(db.String(500))
+    torsdag_img = db.Column(db.String(500))
+    fredag_img = db.Column(db.String(500))
 
 
 
