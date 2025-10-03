@@ -10,7 +10,9 @@
     "lint": "eslint templates/liena-website/scripts/**/*.js",
     "lint:fix": "eslint templates/liena-website/scripts/**/*.js --fix",
     "clean": "rimraf dist .parcel-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:build": "sass static/styles/index.scss:static/styles/css-liena/index.css",
+    "sass:watch": "sass --watch static/styles/index.scss:static/styles/css-liena/index.css"
   },
   "repository": {
     "type": "git",
