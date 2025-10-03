@@ -119,6 +119,10 @@ def vika_screen_W():
 def liena():
     return render_template("/liena-website/index.html")
 
+@app.route("/liena_admin")
+def liena_admin():
+    return render_template("/liena-website/admin.html")
+
 @app.route("/logout")
 def logout():
     session.pop('username', None)
