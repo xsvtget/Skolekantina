@@ -1,0 +1,14 @@
+.navigation-close {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__icon {
+    grid-column: 1 / 2;
+    width: 12.73;
+    height: 12.73;
+    background-image: url(/src/assets/images/logos/close.svg);
+    background-repeat: no-repeat;
+  }
+}
