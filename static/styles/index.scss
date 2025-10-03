@@ -1,44 +1,44 @@
-@use './styles/base/reset' as *;
-@use './styles/base/body' as *;
+@use './base/reset' as *;
+@use './base/body' as *;
 
 // utils
 
 
-@use './styles/utils/fonts' as *;
-@use './styles/utils/extends' as *;
-@use './styles/utils/vars' as *;
-@use './styles/utils/mixins' as *;
+@use './utils/fonts' as *;
+@use './utils/extends' as *;
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
 
 // body
 
-@use './styles/blocks/text' as *;
-@use './styles/blocks/title' as *;
-@use './styles/blocks/image' as *;
-@use './styles/blocks/button' as *;
-@use './styles/blocks/media' as *;
-@use './styles/blocks/logo' as *;
+@use './blocks/text' as *;
+@use './blocks/title' as *;
+@use './blocks/image' as *;
+@use './blocks/button' as *;
+@use './blocks/media' as *;
+@use './blocks/logo' as *;
 
 // navigation
-@use './styles/blocks/navigation' as *;
-@use './styles/blocks/navigation-logo' as *;
-@use './styles/blocks/navigation-burger' as *;
-@use './styles/blocks/navigation-close' as *;
+@use './blocks/navigation' as *;
+@use './blocks/navigation-logo' as *;
+@use './blocks/navigation-burger' as *;
+@use './blocks/navigation-close' as *;
 
 // header
-@use './styles/blocks/header' as *;
-@use './styles/blocks/navigation-menu' as *;
+@use './blocks/header' as *;
+@use './blocks/navigation-menu' as *;
 
 // menu
-@use './styles/blocks/menu' as *;
-@use './styles/blocks/links' as *;
+@use './blocks/menu' as *;
+@use './blocks/links' as *;
 
 // main
-@use './styles/blocks/main' as *;
-@use './styles/blocks/products' as *;
+@use './blocks/main' as *;
+@use './blocks/products' as *;
 
 // about us section
-@use './styles/blocks/section-about-us' as *;
+@use './blocks/section-about-us' as *;
 
 // footer
-@use './styles/blocks/footer' as *;
-@use './styles/blocks/footer-logo' as *;
+@use './blocks/footer' as *;
+@use './blocks/footer-logo' as *;
