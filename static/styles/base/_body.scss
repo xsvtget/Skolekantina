@@ -1,0 +1,12 @@
+@use '../utils/_vars' as *;
+@use '../utils/_mixins' as *;
+
+body {
+  background-color: $bg-color;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 64px;
+
+  scroll-behavior: smooth;
+}

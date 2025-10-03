@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kantina Admin - Weekly Menu</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/admin.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-container">
+    <header class="admin-header">
+      <h1>Kantina - Weekly Menu Management</h1>
+      <a href="index.html" class="admin-nav-link">Back to Main Page</a>
+    </header>
+    
+    <div class="admin-content">
+      <h2>Add Weekly Menu Items</h2>
+      
+      <div class="day-tabs">
+        <button class="day-tab active" data-day="monday">Monday</button>
+        <button class="day-tab" data-day="tuesday">Tuesday</button>
+        <button class="day-tab" data-day="wednesday">Wednesday</button>
+        <button class="day-tab" data-day="thursday">Thursday</button>
+        <button class="day-tab" data-day="friday">Friday</button>
+      </div>
+      
+      <div class="day-content" id="monday-content">
+        <h3>Monday's Menu</h3>
+        <div id="monday-items" class="menu-items-container"></div>
+        <button class="add-item-btn" data-day="monday">Add Item</button>
+      </div>
+      
+      <div class="day-content hidden" id="tuesday-content">
+        <h3>Tuesday's Menu</h3>
+        <div id="tuesday-items" class="menu-items-container"></div>
+        <button class="add-item-btn" data-day="tuesday">Add Item</button>
+      </div>
+      
+      <div class="day-content hidden" id="wednesday-content">
+        <h3>Wednesday's Menu</h3>
+        <div id="wednesday-items" class="menu-items-container"></div>
+        <button class="add-item-btn" data-day="wednesday">Add Item</button>
+      </div>
+      
+      <div class="day-content hidden" id="thursday-content">
+        <h3>Thursday's Menu</h3>
+        <div id="thursday-items" class="menu-items-container"></div>
+        <button class="add-item-btn" data-day="thursday">Add Item</button>
+      </div>
+      
+      <div class="day-content hidden" id="friday-content">
+        <h3>Friday's Menu</h3>
+        <div id="friday-items" class="menu-items-container"></div>
+        <button class="add-item-btn" data-day="friday">Add Item</button>
+      </div>
+      
+      <div class="form-template hidden">
+        <form class="menu-item-form">
+          <input type="hidden" name="day" value="">
+          <input type="hidden" name="itemId" value="">
+          
+          <div class="form-group">
+            <label for="item-name">Name:</label>
+            <input type="text" id="item-name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="item-description">Description:</label>
+            <textarea id="item-description" name="description" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="item-price">Price (NOK):</label>
+            <input type="number" id="item-price" name="price" min="0" step="0.01" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="item-image">Image:</label>
+            <div class="image-input-container">
+              <div class="image-upload-option">
+                <input type="file" id="item-image-file" name="image-file" accept="image/*" class="image-file-input">
+                <label for="item-image-file" class="file-input-label">Choose file</label>
+                <span class="selected-file-name">No file chosen</span>
+              </div>
+              <div class="image-separator">OR</div>
+              <div class="image-url-option">
+                <input type="text" id="item-image" name="image" placeholder="Enter image URL (e.g., ./assets/images/example.jpg)">
+              </div>
+            </div>
+            <div class="image-preview hidden">
+              <img src="" alt="Image Preview" id="image-preview">
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="save-btn">Save Item</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="admin-actions">
+        <button id="save-all-btn" class="primary-btn">Save All Changes</button>
+        <button id="preview-btn" class="secondary-btn">Preview Weekly Menu</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./scripts/admin.js"></script>
+</body>
+</html>
